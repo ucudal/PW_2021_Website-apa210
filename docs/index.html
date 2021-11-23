@@ -38,10 +38,6 @@
                         <span class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
                         <span class="text">aparicio.baptista@gmail.com</span>
                     </li>
-                    <li>
-                        <span class="icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
-                        <span class="text">https://uy.linkedin.com/in/aparicio-baptista-2650a0160</span>
-                    </li>
                 </ul>
             </div>
 
@@ -128,7 +124,7 @@
                         <a href="https://uy.linkedin.com/in/aparicio-baptista-2650a0160" class="icon-large"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                     </li>
                     <li class="horizontal-list__item">
-                        <span class="icon-large" onclick="toggleModal('id-modal-contacto')"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                        <span class="icon-large" onclick="alternarModal('id-modal-contacto')"><i class="fa fa-envelope" aria-hidden="true"></i></span>
                     </li>
                 </ul>
             </div>
@@ -200,7 +196,9 @@
                 </ul>
             </div>
             <div class="about">
-                <h2 class="title2">Antecedentes Laborales</h2>
+                <h2 class="title2">Antecedentes Laborales
+                    <span class="icon-large" onclick="alternarModal('id-modal-info')"><i class="fa fa-info-circle" aria-hidden="true" style="cursor:pointer"></i></span>
+                </h2>
                 <div id="experiences-placeholder"></div>
             </div>
 
@@ -349,7 +347,7 @@
                                 <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
                                     <button
                                         class="text-blue-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                        type="button" onclick="toggleModal('id-modal-contacto')">
+                                        type="button" onclick="alternarModal('id-modal-contacto')">
                                         Cerrar
                                     </button>
                                     <input type="submit" value="Enviar" id="submit_button"
@@ -362,7 +360,7 @@
                     </div>
                 </div>
                 <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="id-modal-contacto-backdrop"
-                    onclick="toggleModal('id-modal-contacto')"></div>
+                    onclick="alternarModal('id-modal-contacto')"></div>
 
                 <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center"
                     id="id-modal-correcto">
@@ -373,19 +371,96 @@
                                 <h1 class="text-black-600 block tracking-wid text-2xl font-bold mb-2">Gracias por comunicarte!</h1>
                                 <button
                                     class="shadow bg-green-400 hover:bg-green-200 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                                    type="button" onclick="toggleModal('id-modal-correcto')">
+                                    type="button" onclick="alternarModal('id-modal-correcto')">
                                     Cerrar
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="id-modal-correcto-backdrop" onclick="toggleModal('id-modal-correcto')"></div>
+                <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="id-modal-correcto-backdrop" onclick="alternarModal('id-modal-correcto')"></div>
             </div>
+
+
+            <div class="contact">
+                <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center"
+                    id="id-modal-info">
+                    <div class="relative w-auto my-6 mx-auto lg:max-w-3xl md:max-w-xl sm:max-w-lg">
+                        <div
+                            class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                            <form class="w-full max-w-xlg p-10">
+                                <div class="flex flex-wrap -mx-3 mb-6">
+                                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                                        <label
+                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                            for="grid-first-name">
+                                            EVERTEC
+                                        </label>
+                                        <div class="box">
+                                            <div class="year_company">
+                                                <h5>2021 - Actualidad</h5>
+                                            </div>
+                                            <div class="text">
+                                                <h4>Software Engineer Senior</h4>
+                                                <p>Equipo Autorizador AAS - Procesador de transacciones ATC Bolivia</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full md:w-1/3 mb-6 px-3">
+                                        <label
+                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                            for="grid-last-name">
+                                            PLEXO
+                                        </label>
+                                        <div class="box">
+                                            <div class="year_company">
+                                                <h5>2019 - 2021</h5>
+                                            </div>
+                                            <div class="text">
+                                                <h4>Software Developer Senior</h4>
+                                                <p>Analisis y desarrollo de software para Uruguay y Mexico</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full md:w-1/3 px-3">
+                                        <label
+                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                            for="grid-last-name">
+                                            Universidad Catolica
+                                        </label>
+                                        <div class="box">
+                                            <div class="year_company">
+                                                <h5>2014 - 2018</h5>
+                                            </div>
+                                            <div class="text">
+                                                <h4>Docente</h4>
+                                                <p>Docente Programación 2, carrera Ing. en Sistemas/Lic. en Sistemas</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                                    <button
+                                        class="text-blue-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                        type="button" onclick="alternarModal('id-modal-info')">
+                                        Cerrar
+                                    </button>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="id-modal-info-backdrop"
+                    onclick="alternarModal('id-modal-info')"></div>
+            </div>
+
+
+
 
         </div>
     </div>
 </body>
-<script src="script.js"></script>
+<script src="script.min.js"></script>
 
 </html>

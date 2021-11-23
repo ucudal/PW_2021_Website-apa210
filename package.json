@@ -5,8 +5,10 @@
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./docs/style-tailwind.css",
-    "tailwind:watch": "npm run tailwind -- --watch"
+    "tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./docs/style-tailwind.css --jit",
+    "tailwind:watch": "npm run tailwind -- --watch",
+    "build": "tsc src/script.ts",
+    "uglify": "npx uglify-js src/script.js -o docs/script.min.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/ucudal/PW_2021_Website-apa210/issues"
   },
-  "homepage": "https://github.com/ucudal/PW_2021_Website-apa210#readme"
+  "homepage": "https://github.com/ucudal/PW_2021_Website-apa210#readme",
+  "dependencies": {
+    "tsc": "^2.0.3",
+    "typescript": "^4.5.2",
+    "uglify-js": "^3.14.3"
+  }
 }

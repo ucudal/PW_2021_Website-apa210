@@ -1,13 +1,13 @@
-function toggleModal(modalID) {
-    document.getElementById(modalID).classList.toggle("hidden");
-    document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
-    document.getElementById(modalID).classList.toggle("flex");
-    document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+function alternarModal(modalID:any) {
+    (<HTMLInputElement>document.getElementById(modalID)).classList.toggle("hidden");
+    (<HTMLInputElement>document.getElementById(modalID + "-backdrop")).classList.toggle("hidden");
+    (<HTMLInputElement>document.getElementById(modalID)).classList.toggle("flex");
+    (<HTMLInputElement>document.getElementById(modalID + "-backdrop")).classList.toggle("flex");
 }
 
-function renderExperiences(lista_experiencias) {
+function renderExperiences(lista_experiencias:any) {
     let experienciasHtml = "";
-    lista_experiencias["experiencia-laboral"].forEach(function (experiencia) {
+    lista_experiencias["experiencia-laboral"].forEach(function (experiencia:any) {
         const { fechaInicio, fechaFin, empresa, puesto, descripcion } = experiencia;
         experienciasHtml += `<div class="box">
                                 <div class="year_company">
@@ -20,7 +20,7 @@ function renderExperiences(lista_experiencias) {
                                 </div>
                             </div>`;
     });
-    document.getElementById("experiences-placeholder").innerHTML  = experienciasHtml;
+    (<HTMLInputElement>document.getElementById("experiences-placeholder")).innerHTML  = experienciasHtml;
 }
 
 function get_experiencia_laboral() {
@@ -45,10 +45,10 @@ function get_experiencia_laboral() {
   document.addEventListener("submit", function (event) {
     event.preventDefault();
     var toSend = {
-        nombreContacto: document.getElementById("name").value + " " + document.getElementById("last_name").value,
-        email: document.getElementById("email").value,
-        message: document.getElementById("message").value,
-        phone: document.getElementById("phone").value
+        nombreContacto: (<HTMLInputElement>document.getElementById("name")).value + " " + (<HTMLInputElement>document.getElementById("last_name")).value,
+        email: (<HTMLInputElement>document.getElementById("email")).value,
+        message: (<HTMLInputElement>document.getElementById("message")).value,
+        phone: (<HTMLInputElement>document.getElementById("phone")).value
     };
     var jsonString = JSON.stringify(toSend);
     var url = "https://pw2021-apinode-apa210.apa210.repl.co/enviar-formulario";
@@ -60,8 +60,8 @@ function get_experiencia_laboral() {
             'Content-Type': 'application/json'
         }
     }).then(function (response) {
-        toggleModal("id-modal-contacto");
-        toggleModal("id-modal-correcto");
+        alternarModal("id-modal-contacto");
+        alternarModal("id-modal-correcto");
     })["catch"](function (error) {
         console.error(error);
     });
